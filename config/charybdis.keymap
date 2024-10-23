@@ -8,7 +8,6 @@
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/42.h"
 #include "zmk-helpers/unicode-chars/russian.dtsi"
-#include <interfaces/hid-trackball.dtsi>
 
 
 #define XXX &none
@@ -74,13 +73,6 @@ MAKE_HRM(hmr_cmd, &lm, &ru_o, KEYS_L THUMBS)
     flavor = "balanced";
     tapping-term-ms = <200>;
     quick-tap-ms = <QUICK_TAP_MS>;
-};
-
-&hid_trackball_interface {
-    automouse-layer = <MOUSE>;
-    automouse-layer-timeout-ms = <600>;
-    scroll-layers = <SCROLL>;
-//    snipe-layers = <3>;
 };
 
 / {
