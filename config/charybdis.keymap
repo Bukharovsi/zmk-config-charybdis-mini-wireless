@@ -319,7 +319,7 @@ MAKE_HRM(hmr_cmd, &lm, &ru_o, KEYS_L THUMBS)
 
         combo_to_game {
             bindings = <&to GAME>;
-            key-positions = <LT5 LM5>;
+            key-positions = <LT5 RT5>;
             timeout-ms = <250>;
             require-prior-idle-ms = <200>;
         };
