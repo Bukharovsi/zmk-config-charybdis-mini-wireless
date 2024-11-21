@@ -20,7 +20,6 @@
   ╰───────────╮ 36  37  38 │ 39  40  41 ╭───────────╯ ╰───────────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────────╯
               ╰────────────┴────────────╯                         ╰─────────────┴─────────────╯             */
 
-
 #define XXX &none
 #define ___ &trans
 
@@ -319,7 +318,7 @@ MAKE_HRM(hmr_cmd, &lm, &ru_o, KEYS_L THUMBS)
 
         combo_to_game {
             bindings = <&to GAME>;
-            key-positions = <LT5 RT5>;
+            key-positions = <LT5 LB5>;
             timeout-ms = <250>;
             require-prior-idle-ms = <200>;
         };
