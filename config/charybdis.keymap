@@ -120,12 +120,6 @@ MAKE_HRM(hmr_cmd, &lm, &ru_o, KEYS_L THUMBS)
             tapping-term-ms = <200>;
         };
 
-        super_mod: super_modifier {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = "<0>";
-            bindings = <&kp LGUI>, <&kp LALT>, <&kp LCTL>;
-        };
-
         td_bore: BASE_or_EXTRA {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -232,6 +226,12 @@ MAKE_HRM(hmr_cmd, &lm, &ru_o, KEYS_L THUMBS)
                 <&kp MACRO_PLACEHOLDER &macro_param_2to1>,
                 <&macro_tap>,
                 <&kp MACRO_PLACEHOLDER>;
+        };
+
+        super_mod: super_mod {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = "<0>";
+            bindings = <&kp LGUI>, <&kp LALT>, <&kp LCTL>;
         };
 
         more_or_equal: more_or_equal {
