@@ -190,7 +190,7 @@ MAKE_HRM(hmr_cmd, &lm, &ru_o, KEYS_L THUMBS)
             tapping-term-ms = <250>;
             quick-tap-ms = <150>;
             require-prior-idle-ms = <125>;
-            bindings = <&kp>, <&kp>;
+            bindings = <&super>, <&kp>;
         };
     };
 
