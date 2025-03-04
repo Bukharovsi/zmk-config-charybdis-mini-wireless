@@ -182,6 +182,16 @@ MAKE_HRM(hmr_cmd, &lm, &ru_o, KEYS_L THUMBS)
             tapping-term-ms = <200>;
             bindings = <&mt GRAVE SQT>, <&kp DOUBLE_QUOTES>;
         };
+
+        space_or_super: space_or_super {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <1>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <250>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <125>;
+            bindings = <&super>, <&kp>;
+        };
     };
 
     macros {
@@ -228,10 +238,10 @@ MAKE_HRM(hmr_cmd, &lm, &ru_o, KEYS_L THUMBS)
                 <&kp MACRO_PLACEHOLDER>;
         };
 
-        super_mod: super_mod {
+        super: super {
             compatible = "zmk,behavior-macro";
             #binding-cells = "<0>";
-            bindings = <&kp LGUI>, <&kp LALT>, <&kp LCTL>;
+            bindings = <&kp LGUI &kp LALT &kp LCTL>;
         };
 
         more_or_equal: more_or_equal {
@@ -345,7 +355,7 @@ MAKE_HRM(hmr_cmd, &lm, &ru_o, KEYS_L THUMBS)
 // ├────────────────┼──────────────┼─────────────────────────┼─────────────────────────────┼──────────────────┼──────────────┤  ├──────────────┼─────────────────┼──────────────────────────────────┼──────────────────────────────┼────────────────────────┼─────────┤
     &kp LSHFT         &kp Z          &kp X                     &kp C                         &kp V              &kp B             &kp P          &kp M             &kp COMMA                          &kp DOT                        &comment_or 0 SLASH      &mo SCROLL
 // ╰────────────────┴──────────────┴─────────────────────────┼─────────────────────────────┼──────────────────┼──────────────┤  ├──────────────┼─────────────────┼──────────────────────────────────┴──────────────────────────────┴────────────────────────┴─────────╯
-                                                               &sk LEFT_COMMAND              &mt super_mod SPACE &mo DIG           &lt SYS ESC    &kp RET
+                                                               &sk LEFT_COMMAND              &space_or_super    &mo DIG           &lt SYS ESC    &kp RET
 //                                                           ╰─────────────────────────────┴──────────────────┴──────────────╯  ╰──────────────┴─────────────────╯
             >;
         };
@@ -395,7 +405,7 @@ MAKE_HRM(hmr_cmd, &lm, &ru_o, KEYS_L THUMBS)
 // ├────────────────┼──────────────┼───────────────────────┼──────────────────────┼───────────────────┼─────────────┤        ├─────────────┼──────────────────┼──────────────┼──────────────────┼──────────────────────┼─────────┤
      ___              ___            ___                     ___                    ___                 ___                    &none         &kp LA(LEFT)       &none          &kp LA(RIGHT)      &kt PAGE_DOWN          ___
 // ╰────────────────┴──────────────┴───────────────────────┼──────────────────────┼───────────────────┼─────────────┤        ├─────────────┼──────────────────┼──────────────┼──────────────────┴──────────────────────┴─────────╯
-                                                             ___                    &mt super_mod SPACE                 ___                    ___           ___
+                                                             ___                    &space_or_super     ___                    ___           ___
 //                                                         ╰──────────────────────┴───────────────────┴─────────────╯        ╰─────────────┴──────────────────╯
             >;
         };
